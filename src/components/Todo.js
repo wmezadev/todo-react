@@ -12,7 +12,7 @@ const Todo = ({ task, tasks, setState }) => {
 
     return (
         <div className="list-item">
-            {task}
+            {task.title}
             <button className="delete is-pulled-right" onClick={handleDetele}></button>
         </div>
     );

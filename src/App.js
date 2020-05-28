@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
+import axios from 'axios';
 import Header from './components/Header';
 import TodoList from './components/TodoList';
 import SubmitForm from './components/SubmitForm';
@@ -7,8 +8,19 @@ import SubmitForm from './components/SubmitForm';
 const App = () => {
 
   const [state, setState] = useState({
-    tasks: ['task 1', 'task 2', 'task 3']
+    tasks: []
   });
+
+  useEffect (() => {
+    const fetchData = async () => {
+      const result = await axios('https://jsonplaceholder.typicode.com/todos/');
+      setState({
+        tasks: result.data
+      })
+      console.log(result.data)
+    }
+    fetchData();
+  },[])
 
   return (
     <div className='wrapper'>
