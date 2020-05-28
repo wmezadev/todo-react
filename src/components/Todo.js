@@ -1,9 +1,13 @@
 import React from 'react';
 
-const Todo = ({ task, setState }) => {
+const Todo = ({ task, tasks, setState }) => {
 
     const handleDetele = () => {
-        alert(`eliminar ${task}`)
+        setState(
+            {
+                tasks: tasks.filter(item => item !== task)
+            }
+        )
     }
 
     return (

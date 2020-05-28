@@ -8,7 +8,7 @@ const TodoList = ({tasks, setState}) => {
             <div className="list-wrapper">
                 {
                     tasks.map((task, id) => (
-                        <Todo key={id} task={task} setState={setState}/>
+                        <Todo key={id} task={task} tasks={tasks} setState={setState}/>
                     ))
                 }
             </div>
