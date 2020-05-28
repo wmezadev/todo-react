@@ -1,4 +1,5 @@
 import React from 'react';
+import Todo from './Todo';
 
 const TodoList = ({tasks}) => {
 
@@ -6,10 +7,8 @@ const TodoList = ({tasks}) => {
         <div>
             <div className="list-wrapper">
                 {
-                    tasks.map(task => (
-                        <p>
-                            {task}
-                        </p>
+                    tasks.map((task, id) => (
+                        <Todo key={id} task={task}/>
                     ))
                 }
             </div>
