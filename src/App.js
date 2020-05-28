@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
+import Header from './components/Header';
 
 const App = () => {
 
@@ -10,15 +11,7 @@ const App = () => {
   return (
     <div className='wrapper'>
         <div className='card frame'>
-          <ul>
-          { 
-            state.tasks.map(task => (
-              <li>
-                {task}
-              </li>
-            ))
-          }
-          </ul>
+          <Header tasks={state.tasks}/>
         </div>
     </div>
   );
