@@ -1,10 +1,15 @@
 import React from 'react';
 
-const Todo = ({ task }) => {
+const Todo = ({ task, setState }) => {
+
+    const handleDetele = () => {
+        alert(`eliminar ${task}`)
+    }
+
     return (
         <div className="list-item">
             {task}
-            <button className="delete is-pulled-right"></button>
+            <button className="delete is-pulled-right" onClick={handleDetele}></button>
         </div>
     );
 }

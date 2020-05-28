@@ -5,7 +5,7 @@ import TodoList from './components/TodoList';
 
 const App = () => {
 
-  const [state] = useState({
+  const [state, setState] = useState({
     tasks: ['task 1', 'task 2', 'task 3']
   });
 
@@ -13,7 +13,7 @@ const App = () => {
     <div className='wrapper'>
         <div className='card frame'>
           <Header tasks={state.tasks}/>
-          <TodoList tasks={state.tasks}/>
+          <TodoList tasks={state.tasks} setState={setState}/>
         </div>
     </div>
   );
