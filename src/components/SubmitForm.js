@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-const SubmitForm = () => {
+const SubmitForm = ({tasks, setTask}) => {
 
     const [state, setState] = useState({
         term: ''
@@ -8,7 +8,12 @@ const SubmitForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        alert(state.term);
+        //validate
+        if(state.term !== ''){
+            setTask({
+                tasks: [...tasks, state.term]
+            })
+        }
     }
 
     return (

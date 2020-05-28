@@ -15,7 +15,7 @@ const App = () => {
         <div className='card frame'>
           <Header tasks={state.tasks}/>
           <TodoList tasks={state.tasks} setState={setState}/>
-          <SubmitForm />
+          <SubmitForm tasks={state.tasks} setTask={setState} />
         </div>
     </div>
   );
